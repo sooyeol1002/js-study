@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // const user = {
+      //   name: "John",
+      //   surname: "Smith"
+      // };
+      // user.name = "Pete";
+      // delete user.name;
+
+      // function isEmpty(obj) {
+      //   for (let key in obj) {
+      //     return false;
+      //   }
+      //   return true;
+      // }
+
+      // let salaries = {
+      //   John: 100,
+      //   Ann: 160,
+      //   Pete: 130,
+      // };
+
+      // let sum  = 0;
+      // for (let key in salaries) {
+      //   sum += salaries[key];
+      // }
+      // alert(sum);
+
+      // 함수 호출 전
+      let menu = {
+        width: 200,
+        height: 300,
+        title: "My menu",
+      };
+
+      // 내가 쓴 코드
+      // function multiplyNumeric(width, height) {
+      //   if(typeof width,height === "number") {
+      //     2*width, 2*height;
+      //   }
+      // };
+
+      // gpt 참조하여 수정한 코드
+      function multiplyNumeric(width, height) {
+        if (typeof width === "number" && typeof height === "number") {
+          width = 2 * width;
+          height = 2 * height;
+        }
+        return { width, height };
+      }
+
+      // 해답
+      function multiplyNumeric(obj) {
+        for (let key in obj) {
+          if (typeof obj[key] == "number") {
+            obj[key] *= 2;
+          }
+        }
+      }
+
+      multiplyNumeric(menu);
+
+      // 함수 호출 후
+      menu = {
+        width: 400,
+        height: 600,
+        title: "My menu",
+      };
+    </script>
+  </body>
+</html>

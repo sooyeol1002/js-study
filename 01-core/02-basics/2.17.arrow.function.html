@@ -23,8 +23,9 @@
         return a + b;
       };
       // 화살표 함수
-      let sum2 = (a, b) => {
-        return a + b;
+      const sum2 = (a, b) => {
+        const result = a + b;
+        return result;
       };
       // 화살표 함수
       // 표현식에 구문이 1개라면
@@ -39,13 +40,15 @@
       let age = prompt("나이를 알려주세요, 18");
 
       let welcome = age < 18 ? () => alert("안녕") : () => alert("안녕하세요!");
-
       welcome();
 
-      let welcome2 =
-        age < 18 ? () => alert("안녕") : () => alert("안녕하세요!");
-
-      welcome2();
+      // let welcome2;
+      // if (age < 18) {
+      //   welcome2 = () => alert("안녕");
+      // } else {
+      //   welcome2 = () => alert("안녕하세요");
+      // }
+      // welcome2();
     </script>
   </body>
 </html>
