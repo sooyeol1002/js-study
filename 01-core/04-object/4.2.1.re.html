@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let obj = {
+        name: "John",
+        age: 30,
+        skills: {
+          coding: "Javascript",
+          sports: "Football",
+        },
+      };
+
+      let obj1 = JSON.parse(JSON.stringify(obj));
+
+      let person = {
+        firstName: "John",
+        lastName: "Doe",
+      };
+
+      let person1 = { ...person };
+
+      let students = [
+        { name: "John", age: 21 },
+        { name: "Anna", age: 22 },
+        { name: "Max", age: 23 },
+      ];
+
+      let copstus = JSON.parse(JSON.stringify(students));
+
+      function copyObj(obj) {
+        JSON.parse(JSON.stringify(obj));
+      }
+
+      let animal = {
+        color: "white",
+        type: "Dog",
+        name: "Milo",
+      };
+
+      let copanimal = Object.assign({}, animal);
+      console.log(copanimal);
+    </script>
+  </body>
+</html>
