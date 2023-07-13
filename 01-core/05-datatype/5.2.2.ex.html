@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function ucFirst(str) {
+      //   if (!str) return str;
+
+      //   return str[0].toUpperCase() + str.slice(1);
+      // }
+      // alert(ucFirst("john")) == "John";
+
+      // 대·소문자 관계없이 스팸 문자열을 확인하려면
+      // 인수로 받은 문자열을 구성하는 문자를
+      // 모두 소문자로 바꾼 후 작업해야 합니다.
+
+      // function checkSpam(str) {
+      //   let lowerStr = str.toLowerCase();
+      //   return lowerStr.includes("viagra") || lowerStr.includes("xxx");
+      // }
+      // alert(checkSpam("buy ViAgRA now"));
+      // alert(checkSpam("free xxxxx"));
+      // alert(checkSpam("innocent rabbit"));
+
+      // function truncate(str, maxlength) {
+      //   if (str.length > maxlength) {
+      //     let trunc = str.slice(0, maxlength - 1) + "…";
+      //     return trunc;
+      //   } else {
+      //     return str;
+      //   }
+      // }
+      // alert(truncate("csjvsbhkj", 8));
+      // alert(truncate("jchsb", 3));
+      // alert(truncate("svsvlkslkjbvl", 10));
+
+      function extractCurrencyValue(str) {
+        return +str.slice(1);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // let styles = ["Jazz", "Blues"];
+
+      // styles[2] = "Rock-n-roll";
+
+      // styles[1] = "Classics";
+      // // styles[Math.floor((styles.length - 1) / 2)] = "Classics";
+
+      // styles.shift();
+
+      // styles.unshift("Rap", "Reggae");
+      // console.log(styles);
+
+      // function sumInput() {
+      //   let num = prompt["입력하세요", 0];
+      //   let result = 0;
+      //   if(num !== 'number' || num === " " || num === null) {
+      //     alert("종료")
+      //   } else {
+      //     result += num;
+      //   }
+      //   return result;
+      // }
+
+      function sumInput() {
+        let numbers = [];
+
+        while (true) {
+          let value = prompt("숫자를 입력해 주세요.", 0);
+
+          // 입력받는 것을 정지해야 하는 경우
+          if (value === "" || value === null || !isFinite(value)) break;
+
+          numbers.push(+value);
+        }
+
+        let sum = 0;
+        for (let number of numbers) {
+          sum += number;
+        }
+        return sum;
+      }
+
+      alert(sumInput());
+    </script>
+  </body>
+</html>
