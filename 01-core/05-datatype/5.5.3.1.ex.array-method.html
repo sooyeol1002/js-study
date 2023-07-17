@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // let people = [
+      //   { name: "John", age: 23 },
+      //   { name: "Adam", age: 30 },
+      //   { name: "Zoe", age: 28 },
+      //   { name: "Emma", age: 20 },
+      // ];
+      // people.sort((a, b) => a.name.localeCompare(b.name));
+      // console.log(people);
+
+      // let people = [
+      //   { name: "John", age: 23 },
+      //   { name: "Adam", age: 30 },
+      //   { name: "Zoe", age: 28 },
+      //   { name: "Emma", age: 20 },
+      // ];
+      // const res = people.some((user) => user.name === "John");
+      // console.log(res);
+
+      // let people = [
+      //   { name: "John", age: 23 },
+      //   { name: "Adam", age: 30 },
+      //   { name: "Zoe", age: 28 },
+      //   { name: "Emma", age: 20 },
+      // ];
+      // people.reduce((total, person) => total + person.age, 0);
+
+      // let people = [
+      //   { name: "John", age: 23 },
+      //   { name: "Adam", age: 30 },
+      //   { name: "Zoe", age: 28 },
+      //   { name: "Emma", age: 20 },
+      // ];
+      // const res = people.filter((person) => person.age >= 25);
+      // console.log(res);
+
+      // let people = [
+      //   { name: "John", age: 23 },
+      //   { name: "Adam", age: 30 },
+      //   { name: "Zoe", age: 28 },
+      //   { name: "Emma", age: 20 },
+      // ];
+      // people.map((person) => person.name).join(", ");
+
+      // let people = [
+      //   { name: "John", age: 23 },
+      //   { name: "Adam", age: 30 },
+      //   { name: "Zoe", age: 28 },
+      //   { name: "Emma", age: 20 },
+      // ];
+      // people.reduce((oldest, person) =>
+      //   oldest.age > person.age ? oldest : person
+      // ).name;
+
+      // const sentenceArr = sentence.split(" ");
+      // const upWords = sentenceArr.map((word) => word.toUpperCase());
+      // const joinedStr = upWords.join(" ");
+      // console.log(joinedStr);
+
+      // let sentence = "Hello world";
+      // sentence = sentence
+      //   .split(" ")
+      //   .map((word) => word.toUpperCase())
+      //   .join(" ");
+      // console.log(sentence);
+
+      // let people = [
+      //   { name: "John", age: 23 },
+      //   { name: "Adam", age: 30 },
+      //   { name: "Zoe", age: 28 },
+      //   { name: "Emma", age: 20 },
+      // ];
+      // people.map((person) => `${person.name}: ${person.age}`);
+
+      // let people = [
+      //   { name: "John", age: 23 },
+      //   { name: "Adam", age: 30 },
+      //   { name: "Zoe", age: 28 },
+      //   { name: "Emma", age: 20 },
+      // ];
+      // const result = people.reduce(
+      //   (total, person) => total / people.length + person.age,
+      //   0
+      // );
+      // console.log(result);
+
+      let people = [
+        { name: "John", age: 23 },
+        { name: "Adam", age: 30 },
+        { name: "Zoe", age: 28 },
+        { name: "Emma", age: 20 },
+      ];
+      const res = people.some((person) => person.name.includes("a"));
+      console.log(res);
+    </script>
+  </body>
+</html>
