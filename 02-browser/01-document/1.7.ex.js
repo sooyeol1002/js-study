@@ -1,36 +1,21 @@
-// function createList() {
-//         var list = document.getElementById("list");
+let data = {
+      "Fish": {
+        "trout": {},
+        "salmon": {}
+      },
 
-//         while (true) {
-//           var input = prompt("리스트의 내용을 입력하세요:");
+      "Tree": {
+        "Huge": {
+          "sequoia": {},
+          "oak": {}
+        },
+        "Flowering": {
+          "apple tree": {},
+          "magnolia": {}
+        }
+      }
+    };
 
-//           // 사용자가 입력을 취소하면 반복 종료
-//           if (input === null) {
-//             break;
-//           }
-
-//           var listItem = document.createElement("li");
-//           var textNode = document.createTextNode(input);
-//           listItem.appendChild(textNode);
-//           list.appendChild(listItem);
-//         }
-//       }
-
-//       createList();
-const rows = 
-document.querySelectorAll("tbody > tr");
-
-// sort를 쓰려면 배열로 변환.
-Array.from(rows).sort((a, b) => 
-a.children[0].textContent.localeCompare(
-b.children[0].textContent));
-
-// document.querySelectorAll("tbody").innerHTML = "";
-
-for(let row of sortedRows) {
-  document.querySelector("tbody").append(row);
-}
-// --------------------------------------------------------
 // createTree: 객체를 받아서 속성목록으로 li를 만듦
 // -> ul에 li들을 붙이고 ul을 container에 붙여야함
 // Container: 트리(ul > li, li ...)를 만들어 붙여넣을 요소
@@ -60,8 +45,11 @@ function createTree(container, data) {
       li.textContent = prop; // li 컨텐트로 속성명을 넣어줘야함
       ul.append(li);
       // 속성 객체에 대한 creatrTree 다시 호출
-      // 컨테이너를 뭘로 할거냐...
-      createTree()
+      // 컨테이너를 뭘로 할거냐... 하위 트리는 컨테이너 li구나...
+
+      // **어떤 시점에 재귀호출을 할 것 인가
+      // **재귀호출은 가장나중에 호출된 함수부터 처리된다
+      createTree(li, data[prop])
     }
 
     // ul을 container에 붙임
