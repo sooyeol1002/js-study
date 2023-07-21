@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input[name="age"] {
+        width: 30px;
+        height: 30px;
+      }
+      input[name="age"]:checked {
+        width: 15px;
+        height: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <!-- radio는 name을 똑같이 맞추면 그룹이 됨 -->
+      <input type="radio" name="age" value="10" checked />
+      <input type="radio" name="age" value="20" />
+      <textarea rows="10" cols="50"></textarea>
+      <hr />
+      <label>
+        <input type="checkbox" name="fruit" value="banana" checked />
+        banana
+      </label>
+      <label>
+        <input type="checkbox" name="fruit" value="kiwi" checked />
+      </label>
+      <label>
+        <input type="checkbox" name="fruit" value="apple" checked />
+      </label>
+      <script src="4.1.form-prop.js"></script>
+    </form>
+  </body>
+</html>
