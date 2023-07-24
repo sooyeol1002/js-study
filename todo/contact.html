@@ -5,6 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: 20px auto;
+    }
+
+    th,
+    td {
+      border: 1px solid #dddddd;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 8px 16px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
   <body>
     <h1>연락처 관리 프로그램</h1>
     <div>
@@ -13,16 +44,17 @@
       <input type="text" id="contactEmail" placeholder="이메일" />
       <button onClick="addContact()">추가</button>
     </div>
-    <h2>저장된 연락처 리스트:</h2>
-    <ul id="contactList"></ul>
-    <div>
-      <input
-        type="text"
-        id="removeContactName"
-        placeholder="이름을 입력하세요"
-      />
-      <button onClick="removeContact()">삭제</button>
-    </div>
+    <hr />
+    <h2>저장된 연락처 목록:</h2>
+    <table id="contactTable">
+      <tr>
+        <th>이름</th>
+        <th>전화번호</th>
+        <th>이메일</th>
+      </tr>
+    </table>
+    <input type="text" id="removeContactName" placeholder="Remove" />
+    <button onClick="removeContact()">삭제</button>
     <script src="script.js"></script>
   </body>
 </html>
