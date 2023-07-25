@@ -15,7 +15,7 @@
   // Promise객체 처리가 완료되면(resolve), 리턴값을 받음
   // await 키워드는 async 함수에서만 사용 가능
   const response = await fetch(
-    "http://localhost:8080/contacts"
+    "http://127.0.0.1:5500/00-pr/posts"
   );
   // 결과가 배열
   const result = await response.json();
