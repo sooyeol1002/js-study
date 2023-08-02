@@ -30,6 +30,7 @@ function cardTemplate(item) {
   <div style="width:300px; margin-bottom:3rem;" data-no="${
     item.no
   }">
+    <p>${item.no}</p>
     <em>${item.creatorName}</em>
     <hr>
     <h3>${item.title}</h3>
@@ -76,7 +77,6 @@ function cardTemplate(item) {
 (() => {
   const form = document.forms[0];
   const post = form.querySelector("button");
-
   const title = form.querySelector("input");
   const content = form.querySelector("textarea");
 
@@ -114,8 +114,9 @@ function cardTemplate(item) {
 
 // 삭제 기능(이벤트 위임)
 (() => {
+  const form = document.forms[1];
   document.body.addEventListener("click", (e) => {
-    alert(e.target.className);
+    
     // e.target: 실제 이벤트가 발생한요소
     // 해당 클래스가 있는지 확인
     if (
