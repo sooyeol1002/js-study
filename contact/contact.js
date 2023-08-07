@@ -10,7 +10,7 @@ function createRow(name, phone, email, image) {
 
   // 2. 요소의 속성 설정
   tr.dataset.email = email;
-  tr.innerHTML = `
+  tr.innerHTML = /*html*/ `
   <td>${name}</td>
   <td>${phone}</td>
   <td>${email}</td>  
@@ -19,6 +19,7 @@ function createRow(name, phone, email, image) {
       ? `<img width="auto" height="30" src="${image}" alt="${name}">`
       : ""
   }</td>
+  <td><button class="btn-modify">수정</button></td>
   `;
   return tr;
 }
@@ -34,8 +35,20 @@ async function getPagedList(page, query) {
   } else {
     url = `http://localhost:8080/contacts/paging?page=${page}&size=${PAGE_SIZE}`;
   }
-  
-  const response = await fetch(url);
+
+  const response = await fetch(url, {
+    headers: {
+      Authorization: `Bearer ${getCookie(
+        "token"
+      )}`,
+    },
+  });
+  // 401: 미인증, 403: 미인가(허가없는)
+  if ([401, 403].includes(response.status)) {
+    // 로그인 페이지로 튕김
+    alert("인증처리가 되지 않았습니다.");
+    window.location.href = "/login.html";
+  }
   // 결과가 배열
   const result = await response.json();
   console.log(result);
@@ -84,28 +97,35 @@ function setBtnActive() {
     btnNext.disabled = false;
   }
 }
-// 데이터 조회 및 목록 생성
-// (async () => {
-//   const response = await fetch(
-//     "http://localhost:8080/contacts"
+
+// // 데이터 조회 및 목록 생성
+// (() => {
+//   window.addEventListener(
+//     "DOMContentLoaded",
+//     async () => {
+//       const response = await fetch(
+//         "http://localhost:8080/contacts"
+//       );
+//       // 결과가 배열
+//       const result = await response.json();
+//       console.log(result);
+
+//       const tbody =
+//         document.querySelector("tbody");
+
+//       // 배열 반복을 해서 tr만든다음에 tbody 가장 마지막 자식에 추가
+//       for (let item of result) {
+//         tbody.append(
+//           createRow(
+//             item.name,
+//             item.phone,
+//             item.email,
+//             item.image
+//           )
+//         );
+//       }
+//     }
 //   );
-//   // 결과가 배열
-//   const result = await response.json();
-//   console.log(result);
-
-//   const tbody = document.querySelector("tbody");
-
-//   // 배열 반복을 해서 tr만든다음에 tbody 가장 마지막 자식에 추가
-//   for (let item of result) {
-//     tbody.append(
-//       createRow(
-//         item.name,
-//         item.phone,
-//         item.email,
-//         item.image
-//       )
-//     );
-//   }
 // })();
 
 // 웹페이지 로딩이 완료되면, 페이징으로 데이터 조회 및 목록 생성
@@ -299,6 +319,11 @@ function setBtnActive() {
       `http://localhost:8080/contacts/${email.value}`,
       {
         method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${getCookie(
+            "token"
+          )}`,
+        },
       }
     );
 
@@ -383,6 +408,9 @@ function setBtnActive() {
               headers: {
                 "content-type":
                   "application/json",
+                Authorization: `Bearer ${getCookie(
+                  "token"
+                )}`,
               },
               body: JSON.stringify({
                 name,
