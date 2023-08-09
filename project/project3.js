@@ -68,21 +68,3 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-  const monthDropdown2 = document.getElementById("monthDropdown2");
-
-  for (let i = 1; i <= 12; i++) {
-    const option = document.createElement("option");
-    option.text = i + "월";
-    option.value = i < 10 ? "0" + i : "" + i;
-    monthDropdown2.add(option);
-  }
-  monthDropdown2.value = "08";
-
-  monthDropdown2.addEventListener("change", function() {
-    const selectedOption = monthDropdown2.options[monthDropdown2.selectedIndex];
-    selectedOption.selected = true;
-  });
-});
-
-//
