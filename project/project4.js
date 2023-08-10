@@ -1,20 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function() {
-//   const monthDropdown = document.getElementById("monthDropdown");
-
-//   for (let i = 1; i <= 12; i++) {
-//     const option = document.createElement("option");
-//     option.text = i + "월";
-//     option.value = i < 10 ? "0" + i : "" + i;
-//     monthDropdown.add(option);
-//   }
-//   monthDropdown.value = "08";
-
-//   monthDropdown.addEventListener("change", function() {
-//     const selectedOption = monthDropdown.options[monthDropdown.selectedIndex];
-//     selectedOption.selected = true;
-//   });
-// });
-
 $(document).ready(function() {
   calendarInit();
 });
@@ -89,7 +72,7 @@ function calendarInit() {
       // 오늘 날짜 표기
       if (today.getMonth() == currentMonth) {
           todayDate = today.getDate();
-          var currentMonthDate = document.querySelectorAll('.dates .current');
+          const currentMonthDate = document.querySelectorAll('.dates .current');
           currentMonthDate[todayDate -1].classList.add('today');
       }
   }
@@ -106,3 +89,13 @@ function calendarInit() {
       renderCalender(thisMonth); 
   });
 }
+
+// 입/출금 페이지로 이동
+function goToManagePage() {
+    window.location.href = 'project3.html';
+  }
+
+// 차트 페이지로 이동
+function goToChartPage() {
+    window.location.href = 'project5.html';
+  }

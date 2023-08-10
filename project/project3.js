@@ -68,3 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+// 캘린더 페이지로 이동
+function goToCalenderPage() {
+  window.location.href = 'project4.html';
+}

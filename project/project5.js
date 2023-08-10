@@ -1,5 +1,5 @@
 // 레이더 차트 데이터
-const radarData = {
+const barData = {
   labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
   datasets: [{
     label: '입금액',
@@ -25,17 +25,17 @@ const radarData = {
 };
 
 // 레이더 차트 설정
-const radarOptions = {
+const barOptions = {
   maintainAspectRatio: false,
   responsive: true,
 };
 
 // 레이더 차트 생성
-const ctx = document.getElementById('myRadarChart').getContext('2d');
-const myRadarChart = new Chart(ctx, {
-  type: 'radar',
-  data: radarData,
-  options: radarOptions
+const ctx = document.getElementById('myBarChart').getContext('2d');
+const myBarChart = new Chart(ctx, {
+  type: 'bar',
+  data: barData,
+  options: barOptions
 });
 
 // 라인 차트 데이터
@@ -78,3 +78,13 @@ const myLineChart = new Chart(chartLine, {
   data: lineData,
   options: lineOptions
 });
+
+// 입/출금 페이지로 이동
+function goToManagePage() {
+  window.location.href = 'project3.html';
+}
+
+// 캘린더 페이지로 이동
+function goToCalenderPage() {
+  window.location.href = 'project4.html';
+}
